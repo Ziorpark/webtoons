@@ -6,7 +6,6 @@
 - 상세 페이지보기
 - 제목과 평점 검색
 - 로그인
-- pull test
 
 ## 개발환경
 
@@ -15,9 +14,8 @@
 - security
 - login
 
-## test
+## 수정사항
 
-- branch
-- 병합해보기!
-- 마지막 commit해보기!
-- git repository에 변경하기
+- input 스타일 
+- submit 버튼 위치 수정
+- 별 채우기 

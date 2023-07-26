@@ -59,9 +59,10 @@
 	<sec:authorize access="hasRole('ROLE_ADMIN')" var="isAdmin" />
 
 	<!-- 전광판 -->
-	<div class="jumbotron">
+	<div class="jumbotron jumbotron-fluid" style="height:200px;">
 		<div class="container">
-			<h1 class="display-3">웹툰 등록</h1>
+			<h1 class="display-4">웹툰 등록</h1>
+			<p class="lead">평가하실 웹툰의 정보를 입력하세요.</p>
 		</div>
 	</div>
 	
@@ -79,55 +80,70 @@
 					<legend>${addTitle}</legend>
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">웹툰이름</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="name" class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">이미지</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="imageFile" type="file" />
 						</div>
 					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">저자</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="author" class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group row">
-						<label class="col-sm-2 control-label">연재요일</label>
-						<div class="col-sm-3">
-							<form:radiobutton path="publicationDay" value="Mon" />
-							Mon
-							<form:radiobutton path="publicationDay" value="Tue" />
-							Tue
-							<form:radiobutton path="publicationDay" value="Wed" />
-							Wed
-							<form:radiobutton path="publicationDay" value="Thr" />
-							Thr
-							<form:radiobutton path="publicationDay" value="Fri" />
-							Fri
-							<form:radiobutton path="publicationDay" value="Sat" />
-							Sat
-							<form:radiobutton path="publicationDay" value="Sun" />
-							Sun
-						</div>
+					    <label class="col-sm-2 control-label">연재요일</label>
+					    <div class="col-sm-10">
+					        <div class="form-check form-check-inline">
+					            <form:radiobutton path="publicationDay" value="Mon" class="form-check-input" />
+					            <label class="form-check-label">Mon</label>
+					        </div>
+					        <div class="form-check form-check-inline">
+					            <form:radiobutton path="publicationDay" value="Tue" class="form-check-input" />
+					            <label class="form-check-label">Tue</label>
+					        </div>
+					        <div class="form-check form-check-inline">
+					            <form:radiobutton path="publicationDay" value="Wed" class="form-check-input" />
+					            <label class="form-check-label">Wed</label>
+					        </div>
+					        <div class="form-check form-check-inline">
+					            <form:radiobutton path="publicationDay" value="Thr" class="form-check-input" />
+					            <label class="form-check-label">Thr</label>
+					        </div>
+					        <div class="form-check form-check-inline">
+					            <form:radiobutton path="publicationDay" value="Fri" class="form-check-input" />
+					            <label class="form-check-label">Fri</label>
+					        </div>
+					        <div class="form-check form-check-inline">
+					            <form:radiobutton path="publicationDay" value="Sat" class="form-check-input" />
+					            <label class="form-check-label">Sat</label>
+					        </div>
+					        <div class="form-check form-check-inline">
+					            <form:radiobutton path="publicationDay" value="Sun" class="form-check-input" />
+					            <label class="form-check-label">Sun</label>
+					        </div>
+					    </div>
 					</div>
+
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">연령제한가</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="ageLimit" class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">줄거리</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:textarea path="description" cols="50" rows="3"
 								class="form-control" />
 						</div>
@@ -135,66 +151,68 @@
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">연재사이트</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="website" class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">장르</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="genre" class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">URL</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="url" class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">코드</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="titleId" class="form-control" />
 						</div>
 					</div>
 
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">작화평가</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="drawing" class="form-control" type="number"
 								step="0.1" max="5"/>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">소재평가</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="material" class="form-control" type="number"
 								step="0.1" max="5"/>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">스토리평가</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="story" class="form-control" type="number"
 								step="0.1" max="5"/>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">메시지평가</label>
-						<div class="col-sm-3">
+						<div class="col-sm-10">
 							<form:input path="message" class="form-control" type="number"
 								step="0.1" max="5"/>
 						</div>
 					</div>
 
-					<div class="form-group row">
-						<div class="col-sm-offset-2 col-sm-10">
-							<input type="submit" class="btn btn-primary" value="등록" />
-							<input type="reset" class="btn btn-primary" value="다시쓰기" /> 
-						</div>
+					<div class="form-group row text-right" style="margin-top:50px;">
+						<div class="col-sm-12">
+					        <div class="d-flex justify-content-end">
+					            <input type="submit" class="btn btn-primary" value="등록" style="margin-right:5px;"/>
+					            <input type="reset" class="btn btn-primary" value="다시쓰기" /> 
+					        </div>
+					    </div>
 					</div>
 				</fieldset>
 			</form:form>
@@ -207,6 +225,11 @@
 				<a href="<c:url value='/login' />"> 로그인하기 </a>
 		</c:otherwise>
 	</c:choose>
+	
+	<footer class="container">
+      <hr>
+      <p>&copy; Webtoon INFO</p>
+   	</footer>
 
 </body>
 </html>

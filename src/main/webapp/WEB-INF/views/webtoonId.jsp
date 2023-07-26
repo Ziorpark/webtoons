@@ -48,11 +48,11 @@
 	}
 	
 	function ratingToPercent() {
-		const score = Math.round(parseFloat("${webtoon.totalScore}") * 20);
-        const numStars = Math.min(5, Math.max(0, score / 20)); // 최소 0, 최대 5개의 별
-        console.log("총점: " + score);
-        console.log("별의 개수: " + numStars);
-        return numStars * 20.0;
+		const score = parseFloat("${webtoon.totalScore}");
+		console.log(score);
+		const numStars = Math.min(50, Math.max(0, score * 10)); // 최소 0, 최대 5개의 별 (0.1 단위)
+	    return (numStars / 10) * 20;
+        
 	}
 	// 스타일을 동적으로 변경하는 함수 호출
 	  function setStarRatingsFillWidth() {
@@ -127,7 +127,7 @@
 			</div>
 		</div>
 		
-		<div class="row" style="margin-bottom: 70px;">
+		<div class="row" style="margin-bottom: 80px;">
 			<div class="col-6" style="display: flex; align-items: center;">
 			<p style="font-size:30px; margin-right: 10px; margin-top: 20px;"><b>총점 : </b>
 				<div class="star-ratings" style="margin-right: 10px;">
@@ -150,7 +150,7 @@
 		</div>
 
     	<div class="row">
-   			<div class="col-md-12">
+   			<div class="col-md-12 text-right">
 				<p><a href="${webtoon.url }" class="btn btn-primary">바로가기! &raquo;</a>
 				
 				<!-- Manager권한이거나 admin권한이면 수정가능하도록 버튼 구현 -->
