@@ -12,5 +12,5 @@
 
 - STS : STS4
 - JAVA
-- 하이- security
+- security
 - login
