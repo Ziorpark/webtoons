@@ -17,4 +17,6 @@
 
 ## test
 
-- branch- 병합해보기!
+- branch
+- 병합해보기!
+- 마지막 commit해보기!
