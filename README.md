@@ -20,3 +20,4 @@
 - branch
 - 병합해보기!
 - 마지막 commit해보기!
+- git repository에 변경하기
