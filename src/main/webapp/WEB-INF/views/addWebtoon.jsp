@@ -144,7 +144,7 @@
 					<div class="form-group row">
 						<label class="col-sm-2 control-label">줄거리</label>
 						<div class="col-sm-10">
-							<form:textarea path="description" cols="50" rows="3"
+							<form:textarea path="description" cols="50" rows="5"
 								class="form-control" />
 						</div>
 					</div>

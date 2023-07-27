@@ -22,6 +22,29 @@
     }
 </script>
 
+<style type="text/css">
+.image-container {
+  position: relative;
+}
+
+.overImage {
+  /* 겹쳐 표시할 이미지의 스타일 설정 */
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  z-index: 1; /* 겹칠 순서를 결정하는 값, 더 큰 값일수록 위로 올라갑니다 */
+  width: 20%;
+  height: 20%;
+}
+
+.webtoon-item {
+  margin: 0 0 10px 0; /* 위쪽 0, 오른쪽 0, 아래쪽 10px, 왼쪽 0 여백 */
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 8px;
+}
+</style>
+
 </head>
 <body>
 	<!-- nav바 -->
@@ -67,13 +90,29 @@
 	<!-- content -->
 	<div class ="jumbotron">
 		<div class="row" align="center">
-			
+		
+			<!-- 변수 정의 -->
+			<c:set var="highestScore" value="-1" />
+			<c:set var="highestScoreWebtoon" value="" />
+			<c:forEach items="${webtoonList}" var="webtoon">
+				<c:set var="webtoonTotalScore"
+					value="${Double.parseDouble(webtoon.totalScore)}" />
+				<c:if test="${webtoonTotalScore > highestScore}">
+					<c:set var="highestScore" value="${webtoonTotalScore}" />
+					<c:set var="highestScoreWebtoon" value="${webtoon}" />
+				</c:if>
+			</c:forEach>
+
 			<c:forEach items = "${webtoonList }"  var = "webtoon">
-				<div class="col-md-4" style="margin-bottom:10px;"">
+				<div class="col-md-4 webtoon-item">
 					<!-- <p><img src =./resources/img/${webtoon.imagPath }></p> -->
 					<p><a href="/webtoons/titleId?id=${webtoon.titleId }">
-						<img src =${pageContext.request.contextPath}/resources/img/naver/${webtoon.imagPath }>
-					</a></p>
+						<img src =${pageContext.request.contextPath}/resources/img/naver/${webtoon.imagPath } class="backImage">	
+						</a>
+						<c:if test="${webtoon.totalScore eq highestScore}">
+							<img src="${pageContext.request.contextPath }/resources/img/reco.png" class="overImage">
+						</c:if>
+					</p>
 					<h3>${webtoon.name}</h3>
 					<p>${webtoon.author}				
 						<br>${webtoon.genre} | ${webtoon.publicationDay}
@@ -81,6 +120,7 @@
 					<!-- <p align=Left>${fn:substring(webtoon.description,0,30)}... -->
 				 </div>
 			</c:forEach>
+			
 		</div>
 	</div>
 	<!-- content -->
